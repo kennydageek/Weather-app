@@ -1,5 +1,13 @@
+import { useState, useEffect } from 'react';
+import useFetch from '../useFetch';
+
 const Weather = () => {
-  return <h2>Hello </h2>;
+  useFetch('peru');
+  return (
+    <div>
+      <h2>hello</h2>
+    </div>
+  );
 };
 
 export default Weather;
