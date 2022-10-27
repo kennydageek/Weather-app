@@ -19,6 +19,10 @@ body {
   color: #d3d8d5;
 }
 
+a {
+  text-decoration: none;
+}
+
 .App {
   padding: 2rem;
 }
@@ -54,4 +58,5 @@ body {
   font-size: 1.6rem;
   color: #d3d8d5;
   font-weight: 600;
+  cursor: pointer;
 }

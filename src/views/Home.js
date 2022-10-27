@@ -1,4 +1,5 @@
 import welcome from '../images/Welcome.png';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -16,7 +17,9 @@ const Home = () => {
         </p>
       </div>
 
-      <button className="cta">Get Started</button>
+      <Link to="/weather">
+        <button className="cta">Get Started</button>
+      </Link>
     </>
   );
 };
