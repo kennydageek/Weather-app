@@ -85,6 +85,15 @@ const Weather = () => {
             resizeClear={true}
             {...svgProps}
           />
+        ) : data.weather[0].main === 'Fog' ? (
+          <Skycons
+            color="white"
+            type={SkyconsType.FOG}
+            animate={true}
+            size={150}
+            resizeClear={true}
+            {...svgProps}
+          />
         ) : (
           <Skycons
             color="white"
