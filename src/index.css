@@ -99,12 +99,14 @@ a {
 .weather-details {
   text-align: center;
   margin-top: 1rem;
+  align-self: center;
   /* background: red; */
 }
 
 .weather__description {
   font-size: 1.8rem;
   font-weight: 600;
+  text-transform: capitalize;
 }
 
 .weather-temp {
@@ -133,4 +135,50 @@ a {
   display: flex;
   justify-content: space-between;
   text-align: center;
+}
+
+.wind-container {
+  align-self: center;
+  /* background: blue; */
+}
+
+.form {
+  color: white;
+  background: #1f48a7;
+  opacity: 0.9;
+  display: flex;
+  min-height: 5rem;
+  margin-top: 2rem;
+  border-radius: 0.2rem;
+  font-size: 1.6rem;
+}
+
+.form__input {
+  width: 100%;
+  background: #1f48a7;
+  opacity: 0.9;
+  outline: 0;
+  border: 0;
+  padding-left: 3rem;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.form__input::placeholder {
+  font-size: 1.6rem;
+  color: #d3d8d5;
+}
+
+.form__input::-ms-value {
+  color: white;
+}
+
+.search-icon {
+  font-size: 3rem;
+  background: #1f48a7;
+  opacity: 0.9;
+  height: 100%;
+  border: 0;
+  cursor: pointer;
+  align-self: center;
 }

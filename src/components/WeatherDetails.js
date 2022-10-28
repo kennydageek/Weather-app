@@ -1,28 +1,28 @@
 import Skycons, { SkyconsType } from 'react-skycons';
 
-const WeatherDetails = () => {
+const WeatherDetails = ({ weather }) => {
   const svgProps = {
     style: { color: 'blue' },
   };
   const infos = [
     {
-      icon: SkyconsType.WIND,
+      icon: SkyconsType.CLOUDY,
       unit: 'km/h',
-      value: 23,
+      value: weather.wind.speed,
       footer: 'Wind',
     },
 
     {
       icon: SkyconsType.SLEET,
       unit: 'g/m3',
-      value: 10,
+      value: weather.main.humidity,
       footer: 'Humidity',
     },
 
     {
       icon: SkyconsType.CLEAR_DAY,
       unit: 'Pa',
-      value: 10,
+      value: weather.main.pressure,
       footer: 'Pressure',
     },
   ];

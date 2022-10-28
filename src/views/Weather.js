@@ -1,4 +1,8 @@
-import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
+import {
+  MdOutlineLightMode,
+  MdOutlineDarkMode,
+  MdOutlineSearch,
+} from 'react-icons/md';
 import { IconContext } from 'react-icons';
 import { useState } from 'react';
 import Skycons, { SkyconsType } from 'react-skycons';
@@ -7,8 +11,9 @@ import WeatherDetails from '../components/WeatherDetails';
 
 const Weather = () => {
   const [mode, setMode] = useState(true);
-
-  useFetch('Lagos');
+  const [cityName, setCityName] = useState('Lagos');
+  const { data } = useFetch(cityName);
+  console.log(data);
 
   const handleToggle = () => {
     setMode(!mode);
@@ -16,6 +21,11 @@ const Weather = () => {
 
   const svgProps = {
     style: { color: 'blue' },
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setCityName(cityName);
   };
 
   return (
@@ -28,7 +38,9 @@ const Weather = () => {
           />
         </div>
         <div className="location">
-          <p>Lagos, Nigeria</p>
+          <p>
+            {data.name}, {data.sys.country}
+          </p>
         </div>
         <div className="darkmode">
           <MdOutlineDarkMode
@@ -41,27 +53,80 @@ const Weather = () => {
       <h2 className="heading">Today's Report</h2>
 
       <div className="weather-icon">
-        <Skycons
-          color="white"
-          type={SkyconsType.SNOW}
-          animate={true}
-          size={150}
-          resizeClear={true}
-          {...svgProps}
-        />
+        {data.weather[0].main === 'Rain' ? (
+          <Skycons
+            color="white"
+            type={SkyconsType.RAIN}
+            animate={true}
+            size={150}
+            resizeClear={true}
+            {...svgProps}
+          />
+        ) : data.weather[0].main === 'Clouds' ? (
+          <Skycons
+            color="white"
+            type={SkyconsType.CLOUDY}
+            animate={true}
+            size={150}
+            resizeClear={true}
+            {...svgProps}
+          />
+        ) : data.weather[0].main === 'Snow' ? (
+          <Skycons
+            color="white"
+            type={SkyconsType.SNOW}
+            animate={true}
+            size={150}
+            resizeClear={true}
+            {...svgProps}
+          />
+        ) : data.weather[0].main === 'Wind' ? (
+          <Skycons
+            color="white"
+            type={SkyconsType.WIND}
+            animate={true}
+            size={150}
+            resizeClear={true}
+            {...svgProps}
+          />
+        ) : (
+          <Skycons
+            color="white"
+            type={SkyconsType.CLEAR_DAY}
+            animate={true}
+            size={150}
+            resizeClear={true}
+            {...svgProps}
+          />
+        )}
       </div>
 
       <div className="weather-details">
-        <p className="weather__description">It's Snowy</p>
+        <p className="weather__description">{data.weather[0].description}</p>
         <div className="weather-temp">
-          <p className="weather-temp__number">29</p>
+          <p className="weather-temp__number">
+            {Math.floor(data.main.temp - 273)}
+          </p>
           <p className="weather-temp__degree">O</p>
         </div>
       </div>
 
       <div className="info-add">
-        <WeatherDetails />
+        <WeatherDetails weather={data} />
       </div>
+
+      <form className="form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          className="form__input"
+          placeholder="Please enter a city name"
+          value={cityName}
+          onChange={(e) => setCityName(e.target.value)}
+        />
+        <button type="submit">
+          <MdOutlineSearch size="4rem" className="search-icon" />
+        </button>
+      </form>
     </IconContext.Provider>
   );
 };

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const useFetch = (cityName) => {
+  const [data, setData] = useState(null);
   const [lat, setLat] = useState(6.5227);
   const [lon, setLon] = useState(3.6218);
   useEffect(() => {
@@ -11,6 +12,7 @@ const useFetch = (cityName) => {
         return res.json();
       })
       .then((data) => {
+        console.log(data);
         setLat(data[0].lat);
         setLon(data[0].lon);
       });
@@ -24,9 +26,12 @@ const useFetch = (cityName) => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
+        setData(data);
       });
-  });
+  }, [lat, lon]);
+
+  // console.log(data);
+  return { data };
 };
 
 export default useFetch;
