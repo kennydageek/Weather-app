@@ -24,11 +24,11 @@ a {
 }
 
 .App {
-  padding: 2rem;
+  padding: 5rem 2rem;
 }
 
 .welcome {
-  margin-top: 10rem;
+  margin-top: 7rem;
 }
 
 .welcome__img {
@@ -59,4 +59,26 @@ a {
   color: #d3d8d5;
   font-weight: 600;
   cursor: pointer;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: red; */
+}
+
+.lightmode {
+}
+
+.location {
+  /* align-self: center; */
+  display: flex;
+}
+
+.location__icon {
+  /* align-self: center;/ */
+}
+
+.darkmode {
 }

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
 const useFetch = (cityName) => {
-  const [lat, setLat] = useState(null);
-  const [lon, setLon] = useState(null);
+  const [lat, setLat] = useState(6.5227);
+  const [lon, setLon] = useState(3.6218);
   useEffect(() => {
     fetch(
       `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=d4ef7b1dc95570d1499b63ba42d48dc1`
