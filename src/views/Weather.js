@@ -1,6 +1,7 @@
 import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
 import { IconContext } from 'react-icons';
 import { useState } from 'react';
+import Skycons, { SkyconsType } from 'react-skycons';
 // import useFetch from '../useFetch';
 
 const Weather = () => {
@@ -8,6 +9,10 @@ const Weather = () => {
 
   const handleToggle = () => {
     setMode(!mode);
+  };
+
+  const svgProps = {
+    style: { color: 'blue' },
   };
 
   return (
@@ -29,6 +34,27 @@ const Weather = () => {
           />
         </div>
       </nav>
+
+      <h2 class="heading">Today's Report</h2>
+
+      <div className="weather-icon">
+        <Skycons
+          color="white"
+          type={SkyconsType.SNOW}
+          animate={true}
+          size={150}
+          resizeClear={true}
+          {...svgProps}
+        />
+      </div>
+
+      <div className="weather-details">
+        <p className="weather__description">It's Snowy</p>
+        <div className="weather-temp">
+          <p className="weather-temp__number">29</p>
+          <p className="weather-temp__degree">O</p>
+        </div>
+      </div>
     </IconContext.Provider>
   );
 };

@@ -73,7 +73,10 @@ a {
 
 .location {
   /* align-self: center; */
+  font-weight: 600;
+  font-size: 2rem;
   display: flex;
+  color: #9e6c45;
 }
 
 .location__icon {
@@ -81,4 +84,46 @@ a {
 }
 
 .darkmode {
+}
+
+.heading {
+  margin-top: 2.5rem;
+}
+
+.weather-icon {
+  margin: 6rem auto 0;
+  width: 15rem;
+  /* background: red; */
+}
+
+.weather-details {
+  text-align: center;
+  margin-top: 3rem;
+  /* background: red; */
+}
+
+.weather__description {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.weather-temp {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.weather-temp__number {
+  text-align: center;
+  font-size: 6rem;
+  font-weight: 600;
+}
+
+.weather-temp__degree {
+  color: #57c4ff;
+  font-size: 2rem;
+  font-weight: 500;
+  position: relative;
+  left: -0.5rem;
 }
