@@ -98,7 +98,7 @@ a {
 
 .weather-details {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 1rem;
   /* background: red; */
 }
 
@@ -126,4 +126,11 @@ a {
   font-weight: 500;
   position: relative;
   left: -0.5rem;
+}
+
+.info-add {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
 }
