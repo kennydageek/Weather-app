@@ -12,7 +12,7 @@ const useFetch = (cityName) => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setLat(data[0].lat);
         setLon(data[0].lon);
       });

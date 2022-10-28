@@ -7,7 +7,7 @@ const WeatherDetails = ({ weather }) => {
   const infos = [
     {
       icon: SkyconsType.CLOUDY,
-      unit: 'km/h',
+      unit: 'knot',
       value: weather.wind.speed,
       footer: 'Wind',
     },
@@ -21,7 +21,7 @@ const WeatherDetails = ({ weather }) => {
 
     {
       icon: SkyconsType.CLEAR_DAY,
-      unit: 'Pa',
+      unit: 'atm',
       value: weather.main.pressure,
       footer: 'Pressure',
     },
@@ -40,8 +40,7 @@ const WeatherDetails = ({ weather }) => {
             {...svgProps}
           />
           <p className="wind-speed">
-            {info.value}
-            {info.unit}
+            {info.value} {info.unit}
           </p>
           <p className="wind-footer">{info.footer}</p>
         </div>

@@ -1,8 +1,4 @@
-import {
-  MdOutlineLightMode,
-  MdOutlineDarkMode,
-  MdOutlineSearch,
-} from 'react-icons/md';
+import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
 import { IconContext } from 'react-icons';
 import { useState } from 'react';
 import Skycons, { SkyconsType } from 'react-skycons';
@@ -13,7 +9,7 @@ const Weather = () => {
   const [mode, setMode] = useState(true);
   const [cityName, setCityName] = useState('Lagos');
   const { data } = useFetch(cityName);
-  console.log(data);
+  // console.log(data);
 
   const handleToggle = () => {
     setMode(!mode);
@@ -123,9 +119,6 @@ const Weather = () => {
           value={cityName}
           onChange={(e) => setCityName(e.target.value)}
         />
-        <button type="submit">
-          <MdOutlineSearch size="4rem" className="search-icon" />
-        </button>
       </form>
     </IconContext.Provider>
   );
