@@ -3,6 +3,7 @@ import { IconContext } from 'react-icons';
 import { useState } from 'react';
 import Skycons, { SkyconsType } from 'react-skycons';
 import useFetch from '../useFetch';
+import WeatherDetails from '../components/WeatherDetails';
 
 const Weather = () => {
   const [mode, setMode] = useState(true);
@@ -59,44 +60,7 @@ const Weather = () => {
       </div>
 
       <div className="info-add">
-        <div className="wind-container">
-          <Skycons
-            color="#eda329"
-            type={SkyconsType.WIND}
-            animate={false}
-            size={32}
-            resizeClear={true}
-            {...svgProps}
-          />
-          <p className="wind-speed">23 km/h</p>
-          <p className="wind-footer">Wind</p>
-        </div>
-
-        <div className="wind-container">
-          <Skycons
-            color="#eda329"
-            type={SkyconsType.SLEET}
-            animate={false}
-            size={32}
-            resizeClear={true}
-            {...svgProps}
-          />
-          <p className="wind-speed">23 m/s</p>
-          <p className="wind-footer">Humidity</p>
-        </div>
-
-        <div className="wind-container">
-          <Skycons
-            color="#eda329"
-            type={SkyconsType.CLEAR_DAY}
-            animate={false}
-            size={32}
-            resizeClear={true}
-            {...svgProps}
-          />
-          <p className="wind-speed">23 Pa</p>
-          <p className="wind-footer">Pressure</p>
-        </div>
+        <WeatherDetails />
       </div>
     </IconContext.Provider>
   );
