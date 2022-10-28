@@ -15,6 +15,9 @@ const useFetch = (cityName) => {
         // console.log(data);
         setLat(data[0].lat);
         setLon(data[0].lon);
+      })
+      .catch((err) => {
+        console.log(err.message);
       });
   });
 
@@ -27,6 +30,9 @@ const useFetch = (cityName) => {
       })
       .then((data) => {
         setData(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
       });
   }, [lat, lon]);
 

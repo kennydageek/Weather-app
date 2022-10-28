@@ -5,7 +5,6 @@ import Weather from './views/Weather';
 function App() {
   return (
     <div className="App">
-      {/* <Home /> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

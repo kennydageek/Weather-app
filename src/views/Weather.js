@@ -1,4 +1,5 @@
 import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
+import { FaHamburger } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import { useState } from 'react';
 import Skycons, { SkyconsType } from 'react-skycons';
@@ -27,11 +28,14 @@ const Weather = () => {
   return (
     <IconContext.Provider value={{ size: '2.3rem' }}>
       <nav className="navigation flex">
-        <div className="lightmode">
+        {/* <div className="lightmode">
           <MdOutlineLightMode
             onClick={handleToggle}
             color={mode ? '#57c4ff' : '#504f53'}
           />
+        </div> */}
+        <div className="lightmode">
+          <FaHamburger color="#504f53" />
         </div>
         <div className="location">
           <p>
@@ -39,10 +43,7 @@ const Weather = () => {
           </p>
         </div>
         <div className="darkmode">
-          <MdOutlineDarkMode
-            onClick={handleToggle}
-            color={!mode ? '#57c4ff' : '#504f53'}
-          />
+          <MdOutlineDarkMode onClick={handleToggle} color="#57c4ff" />
         </div>
       </nav>
 
